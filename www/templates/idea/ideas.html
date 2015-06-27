@@ -1,0 +1,29 @@
+<ion-view view-title="Light the Bulb!  Ideas">
+    <ion-content ng-class="{animate-fade-slide-in:show}">
+        <div class="list">
+            <div class="card card-gallery item item-text-wrap" ng-repeat="idea in ideas | orderBy : ['updated'] : true track by $index" ng-if="idea.image != null">
+                <div class="ink dark-bg" ui-sref="app.idea({ideaId:idea.id})">
+                    <h2>{{idea.description}}</h2>
+                    <img class="full-image" ng-src="{{idea.image}}">
+                </div>
+                <div class="item tabs tabs-secondary tabs-icon-left" style="width: 100px; float: left;">
+                    <a class="tab-item stable-bg assertive" ng-click="addLike(idea)">
+                        <i class="icon ion-android-happy"></i>
+                        {{idea.likes}}
+                    </a>
+                    <a class="tab-item stable-bg positive-900" ng-click="addDislike(idea)">
+                        <i class="icon ion-android-sad"></i>
+                        {{idea.dislikes}}
+                    </a>
+                </div>
+                <div class="item tabs tabs-secondary tabs-icon-left" style="width: 50px; float: right;">
+                    <a class="tab-item stable-bg positive-900" ui-sref="app.addComment({ideaId: idea.id})">
+                        <i class="icon ion-android-chat"></i>
+                        {{idea.comments_count}}
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--<button ui-sref="app.addIdea" id="fab-gallery" class="button button-fab button-fab-top-right expanded button-energized-900 drop"><i class="icon ion-plus"></i></button>-->
+    </ion-content>
+</ion-view>

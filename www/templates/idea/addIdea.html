@@ -1,0 +1,24 @@
+<ion-view view-title="Light the Bulb!  Add Idea" align-title="left">
+    <ion-content>
+        <!--<div class="hero no-header flat">-->
+            <!--<div class="content">-->
+                <!--<div class="app-icon"></div>-->
+                <!--<h1>Thronester</h1>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="list">
+            <ion-md-input placeholder="Tell us your name" highlight-color="balanced" type="text" ng-model="data.author"></ion-md-input>
+            <ion-md-input placeholder="Type of idea" highlight-color="balanced" type="text" ng-model="data.category"></ion-md-input>
+            <ion-md-input placeholder="What's your idea?" highlight-color="balanced" type="text" ng-model="data.description"></ion-md-input>
+            <ion-md-input placeholder="How much does it cost to implement it?" highlight-color="balanced" type="text" ng-model="data.price"></ion-md-input>
+        </div>
+        <div class="padding">
+            <button ng-click="submitIdea()" class="button button-full button-assertive ink">Submit</button>
+        </div>
+        <!--<div class="button-bar social-login">-->
+            <!--<button class="button button-small button-border icon-left ion-social-google button-assertive-900">Google+</button>-->
+            <!--<button class="button button-small button-border icon-left ion-social-twitter button-calm-900">Twitter</button>-->
+            <!--<button class="button button-small button-border icon-left ion-social-facebook button-positive-900">Facebook</button>-->
+        <!--</div>-->
+    </ion-content>
+</ion-view>

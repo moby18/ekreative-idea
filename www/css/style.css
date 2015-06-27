@@ -79,3 +79,13 @@ p {
     position: fixed;
     bottom: 0;
 }
+
+.bar-assertive-900 {
+    background-color: #EBA721 !important;
+}
+
+.item-md-label input {
+    background-color: #ffffff !important;
+    color: black;
+    border-bottom: 2px solid #01bcff;
+}

@@ -1,0 +1,32 @@
+<ion-view view-title="Light the Bulb!  Idea">
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+        <div class="hero slide-up" style="background-image: url({{idea.image}});">
+            <div class="content">
+                <div class="avatar" style="background-image: url('{{idea.user_avatar}}');"></div>
+                <h3><a class="light">{{idea.author}}</a></h3>
+                <h4>{{idea.description}}</h4>
+            </div>
+        </div>
+        <!--<div class="tabs tabs-dark tabs-icon-top static">-->
+            <!--<a ui-sref="app.activity" class="tab-item">-->
+                <!--<i class="icon ion-arrow-graph-up-right"></i> Activity-->
+            <!--</a>-->
+            <!--<a ui-sref="app.friends" class="tab-item">-->
+                <!--<i class="icon ion-android-people"></i> Friends-->
+            <!--</a>-->
+            <!--<a ui-sref="app.gallery" class="tab-item">-->
+                <!--<i class="icon ion-images"></i> Photos-->
+            <!--</a>-->
+        <!--</div>-->
+        <h4 class="content padding double-padding-x">Comments</h4>
+        <div class="list animate-fade-slide-in-right">
+            <a class="item item-avatar item-icon-right" ng-repeat="comment in comments | orderBy : ['id'] : true track by $index">
+                <img ng-src="{{comment.user_avatar}}">
+                <h2>{{comment.author}}</h2>
+                <p>{{comment.text}}</p>
+                <i class="icon ion-chatbubble muted"></i>
+            </a>
+        </div>
+        <button ui-sref="app.addComment({ideaId: idea.id})" id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>
+    </ion-content>
+</ion-view>
